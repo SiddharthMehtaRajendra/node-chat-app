@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
-
+    
 const {generateMessage} = require('./utils/message')
 
 app.use(express.static(publicPath));

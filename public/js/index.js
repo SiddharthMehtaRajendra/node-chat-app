@@ -33,3 +33,16 @@ $('#message-form').on('submit', function(e) {
 
     });
 });
+
+var locationButton = $('#send-location');
+locationButton.on('click', function() {
+    if(!navigator.geolocation) {
+        return alert('Gelocation Not Supported!');
+    }
+
+    navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position);
+    }, function () {
+        alert('Unable to fetch Location!');
+    });
+})
